@@ -1,8 +1,12 @@
-import IndexViewController from "../../viewController";
 
-const Login = () => {
+interface loginProps{
+    setRoom: any
+    setUsername: any
+    joinRoom: any
+}
 
-    const {setRoom, setUsername, joinRoom} = IndexViewController()
+const Login = ({setRoom, setUsername, joinRoom}: loginProps) => {
+
 
     return (
         <div className="joinChatContainer">

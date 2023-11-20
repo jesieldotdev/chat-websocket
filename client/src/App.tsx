@@ -7,24 +7,22 @@ function App() {
 
   const {
     showChat,
-    setUsername,
-    setRoom,
-    joinRoom,
-    socket,
+ 
     username,
-    room,
-    setShowChat,
+  
     currentMessage,
     messageList,
     sendMessage,
     setCurrentMessage,
-    setMessageList
+    setRoom,
+    setUsername,
+    joinRoom
   } = IndexViewController()
 
   return (
     <div className="App">
       {!showChat ? (
-        <Login />
+        <Login setRoom={setRoom} setUsername={setUsername} joinRoom={joinRoom} />
       ) : (
         <Chat currentMessage={currentMessage} messageList={messageList} username={username} setCurrentMessage={setCurrentMessage} sendMessage={sendMessage} />
       )}
