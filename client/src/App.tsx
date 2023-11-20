@@ -1,5 +1,6 @@
 import "./App.css";
-import Chat from "./Chat";
+import Chat from "./components/Chat";
+import Login from "./components/Login";
 import IndexViewController from "./viewController";
 
 function App() {
@@ -11,32 +12,21 @@ function App() {
     joinRoom,
     socket,
     username,
-    room
+    room,
+    setShowChat,
+    currentMessage,
+    messageList,
+    sendMessage,
+    setCurrentMessage,
+    setMessageList
   } = IndexViewController()
 
   return (
     <div className="App">
       {!showChat ? (
-        <div className="joinChatContainer">
-          <h3>Join A Chat</h3>
-          <input
-            type="text"
-            placeholder="John..."
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="Room ID..."
-            onChange={(event) => {
-              setRoom(event.target.value);
-            }}
-          />
-          <button onClick={joinRoom}>Join A Room</button>
-        </div>
+        <Login />
       ) : (
-        <Chat socket={socket} username={username} room={room} />
+        <Chat currentMessage={currentMessage} messageList={messageList} username={username} setCurrentMessage={setCurrentMessage} sendMessage={sendMessage} />
       )}
     </div>
   );
