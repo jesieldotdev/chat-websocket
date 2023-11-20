@@ -1,3 +1,4 @@
+import * as S from './style'
 
 interface loginProps{
     setRoom: any
@@ -9,7 +10,7 @@ const Login = ({setRoom, setUsername, joinRoom}: loginProps) => {
 
 
     return (
-        <div className="joinChatContainer">
+        <S.LoginContainer>
           <h3>Join A Chat</h3>
           <input
             type="text"
@@ -26,7 +27,7 @@ const Login = ({setRoom, setUsername, joinRoom}: loginProps) => {
             }}
           />
           <button onClick={joinRoom}>Join A Room</button>
-        </div>
+        </S.LoginContainer>
     )
 }
 
