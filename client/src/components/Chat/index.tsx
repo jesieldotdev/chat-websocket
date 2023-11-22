@@ -33,7 +33,7 @@ const Chat = ({
                 </div>
                 <div className="message-meta">
                   <p id="time">{messageContent.time}</p>
-                  <p id="author">{messageContent.author}</p>
+                  {messageContent.author === 'other' ? <p id="author">{messageContent.author}</p> : null}
                 </div>
               </div>
             </div>
@@ -48,9 +48,7 @@ const Chat = ({
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
-          onKeyPress={(event) => {
-            event.key === "Enter" && sendMessage();
-          }}
+         
         />
         <button onClick={sendMessage}>&#9658;</button>
       </div>
