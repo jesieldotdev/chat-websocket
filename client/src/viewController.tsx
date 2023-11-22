@@ -1,7 +1,12 @@
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const socket = io.connect("http://localhost:3000");
+// const url = "http://localhost:4000"
+const url = "https://impartial-curved-justice.glitch.me/"
+
+const socket = io(url);
+
+
 
 const IndexViewController = () => {
 
@@ -42,6 +47,8 @@ const IndexViewController = () => {
         setMessageList((list) => [...list, data]);
       });
     }, [socket]);
+
+    // console.log(messageList)
 
     return{
         username,

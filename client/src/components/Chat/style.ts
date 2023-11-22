@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ChatWindow = styled.div`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   .chat-header {
     background-color: #075a52;
     color: #fefefe;

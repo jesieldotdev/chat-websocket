@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import * as S from './style'
 
 interface chatProps {
@@ -15,6 +16,9 @@ const Chat = ({
   setCurrentMessage,
   sendMessage,
 }: chatProps) => {
+
+
+  // console.log(messageList)
   return (
     <S.ChatWindow>
       <div className="chat-header">
@@ -24,6 +28,7 @@ const Chat = ({
         {messageList.map((messageContent: any) => {
           return (
             <div
+              // key={messageContent.message}
               className="message"
               id={username === messageContent.author ? "you" : "other"}
             >
@@ -50,7 +55,7 @@ const Chat = ({
           }}
          
         />
-        <button onClick={sendMessage}>&#9658;</button>
+        <button onClick={() => sendMessage()}>&#9658;</button>
       </div>
     </S.ChatWindow>
   );
