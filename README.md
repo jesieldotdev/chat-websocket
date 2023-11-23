@@ -1,4 +1,4 @@
 # Live Chat
 
 ## Backend: Socket.io and Express
-## Frontend: React-js
+## Frontend: React-js and Vite
