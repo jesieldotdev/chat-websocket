@@ -1,8 +1,8 @@
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-// const url = "http://localhost:4000"
-const url = "https://impartial-curved-justice.glitch.me/"
+// const url = "http://localhost:5000"
+const url = "https://powerful-oxidized-navy.glitch.me/"
 
 const socket = io(url);
 

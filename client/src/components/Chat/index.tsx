@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import * as S from './style'
+import { useEffect } from "react";
+import * as S from "./style";
 
 interface chatProps {
   messageList: any;
@@ -16,9 +16,7 @@ const Chat = ({
   setCurrentMessage,
   sendMessage,
 }: chatProps) => {
-
-
-  // console.log(messageList)
+  console.log(messageList);
   return (
     <S.ChatWindow>
       <div className="chat-header">
@@ -28,9 +26,8 @@ const Chat = ({
         {messageList.map((messageContent: any) => {
           return (
             <div
-              // key={messageContent.message}
-              className="message"
-              id={username === messageContent.author ? "you" : "other"}
+              id="message"
+              className={username !== messageContent.author ? "other" : "you"}
             >
               <div>
                 <div className="message-content">
@@ -38,9 +35,13 @@ const Chat = ({
                 </div>
                 <div className="message-meta">
                   <p id="time">{messageContent.time}</p>
-                  {messageContent.author === 'other' ? <p id="author">{messageContent.author}</p> : null}
                 </div>
               </div>
+              {messageContent.author === username ? (
+                <p className="author">{messageContent.author}</p>
+              ) : (
+                <p className="author">{messageContent.author}</p>
+              )}
             </div>
           );
         })}
@@ -53,9 +54,8 @@ const Chat = ({
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
-         
         />
-        <button onClick={() => sendMessage()}>&#9658;</button>
+        <button className="btn" onClick={() => sendMessage()}>&#9658;</button>
       </div>
     </S.ChatWindow>
   );

@@ -3,10 +3,14 @@ import styled from "styled-components";
 export const AppContainer = styled.div`
   max-width: 100vw;
   height: 100vh;
+
+  /* min-height: 100vh; */
   background: #282828;
   margin: 0;
   color: #212121;
   font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
+  margin-bottom: 0px;
+
 `;
