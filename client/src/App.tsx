@@ -15,6 +15,7 @@ function App() {
     setRoom,
     setUsername,
     joinRoom,
+    allMessages
   } = IndexViewController();
 
   return (
@@ -32,6 +33,7 @@ function App() {
           username={username}
           setCurrentMessage={setCurrentMessage}
           sendMessage={sendMessage}
+          allMessages={allMessages}
         />
       )}
     </S.AppContainer>

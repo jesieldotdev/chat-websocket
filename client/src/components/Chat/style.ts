@@ -19,10 +19,11 @@ export const ChatWindow = styled.div`
     /* margin-bottom: auto; */
     position: relative;
     top: 0px;
+    font-weight: 700;
   }
 
   .chat-body {
-    min-height: 92%;
+    min-height: 76vh;
     /* min-height: 67vh; */
 
     background: #1E1E1E;
@@ -33,7 +34,8 @@ export const ChatWindow = styled.div`
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
+    margin-bottom: 100px;
   }
 
   #message {
@@ -115,12 +117,13 @@ export const ChatWindow = styled.div`
     bottom: 10px;
     display: flex;
     justify-content: space-between;
+    
   }
 
   input {
     height: 50px;
     display: flex;
-    min-width: 84%;
+    min-width: 82%;
     /* flex: 85%; */
     border: 0;
     border-radius: 16px;
@@ -133,6 +136,8 @@ export const ChatWindow = styled.div`
     font-family: "Open Sans", sans-serif;
     background-color: #282828;
     color: #fefefe;
+
+
   }
 
   .btn:hover {
@@ -142,17 +147,19 @@ export const ChatWindow = styled.div`
   .btn {
     border: 0;
     display: flex;
-    width: 100%;
+    width: 70px;
+    height: 64px;
     align-items: center;
     justify-content: center;
-    border-radius: 60%;
+    border-radius: 16px;
+    padding: 8px;
     /* display: grid; */
     /* place-items: center; */
     cursor: pointer;
     /* flex: 15%; */
     height: 100%;
-    /* background-color: #075a52; */
-    background: transparent;
+    background-color: #075a52;
+    /* background: transparent; */
     outline: none;
     font-size: 25px;
     color: #fefefe;
