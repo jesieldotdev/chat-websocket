@@ -9,7 +9,7 @@ export const ChatWindow = styled.div`
   overflow-y: hidden;
   /* margin: 0px; */
   height: 100vh;
-
+  
 
   .chat-header {
     background-color: #075a52;
@@ -22,10 +22,10 @@ export const ChatWindow = styled.div`
   }
 
   .chat-body {
-  min-height: 92%;
-  /* min-height: 67vh; */
+    min-height: 92%;
+    /* min-height: 67vh; */
 
-    background: #e5ded5;
+    background: #1E1E1E;
     margin: 0;
     padding: 16px;
     padding-bottom: 200px;
@@ -33,27 +33,33 @@ export const ChatWindow = styled.div`
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    margin-bottom: auto;
-
+    padding-bottom: 100px;
   }
 
-  #message{
+  #message {
     border-radius: 8px;
-    max-width: 88%;
+    width: fit-content;
+    max-width: 70%;
     padding: 8px;
     margin-top: 16px;
     padding-top: 0;
+    padding-left: 8px;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.2;
   }
 
-  .message-content{
-    padding: 2px;
+  .message-content {
+    /*padding: 2px;*/
+    width: fit-content;
   }
 
   .you {
     justify-content: flex;
-    background-color: #d9f4bc;
+    background-color: #128C7E;
     margin-left: auto;
-
+    color: #fff;
   }
 
   .you .message-content {
@@ -67,7 +73,16 @@ export const ChatWindow = styled.div`
 
   .other {
     justify-content: flex-end;
-    background-color: #f4f4f4;
+    background-color: #363636;
+    color: #fff;
+
+    .time {
+      height: 100%;
+      margin-top: 0px;
+      display: flex;
+      align-items: end;
+      color: grey;
+    }
   }
 
   .other .message-content {
@@ -83,67 +98,79 @@ export const ChatWindow = styled.div`
     margin-left: 10px;
   }
 
-  .author{
+  .author {
     font-weight: bold;
-
+    color: orange;
   }
 
   .chat-footer {
-  margin: 12px;
-  height: 70px;
-  /* border: 1px solid #263238; */
-  border-radius: 16px;
-  border-top: none;
-  /* overflow: hidden; */
-  
-  position: sticky;
-  bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
+    margin: 12px;
+    height: 70px;
+    /* border: 1px solid #263238; */
+    border-radius: 16px;
+    border-top: none;
+    /* overflow: hidden; */
 
- input {
-  height: 50px;
-display: flex;
-min-width: 84%;
-  /* flex: 85%; */
-  border: 0;
-  border-radius: 16px;
-  padding: 0 0.7em;
-  font-size: 1em;
-  border-right: 1px dotted #607d8b;
-  margin-right: 8px;
-  
-  outline: none;
-  font-family: "Open Sans", sans-serif;
-}
+    position: sticky;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
 
+  input {
+    height: 50px;
+    display: flex;
+    min-width: 84%;
+    /* flex: 85%; */
+    border: 0;
+    border-radius: 16px;
+    padding: 0 0.7em;
+    font-size: 1em;
+    border-right: 1px dotted #607d8b;
+    margin-right: 8px;
 
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+    background-color: #282828;
+    color: #fefefe;
+  }
 
-.btn:hover {
-  color: #fff;
-}
+  .btn:hover {
+    color: #fff;
+  }
 
-.btn {
-  border: 0;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content:center;
-  border-radius: 60%;
-  /* display: grid; */
-  /* place-items: center; */
-  cursor: pointer;
-  /* flex: 15%; */
-  height: 100%;
-  /* background-color: #075a52; */
-  background: transparent;
-  outline: none;
-  font-size: 25px;
-  color: #282828;
-}
-.hide {
-  opacity: 0 !important;
-}
+  .btn {
+    border: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60%;
+    /* display: grid; */
+    /* place-items: center; */
+    cursor: pointer;
+    /* flex: 15%; */
+    height: 100%;
+    /* background-color: #075a52; */
+    background: transparent;
+    outline: none;
+    font-size: 25px;
+    color: #fefefe;
+  }
+  .hide {
+    opacity: 0 !important;
+  }
 
+  .time {
+    font-size: 12px;
+    margin-left: 8px;
+    /*position: relative;*/
+    /*top: 20px;*/
+    color: #cbcbcb;
+    /*background-color: red;*/
+    height: 100%;
+    margin-top: 0px;
+    display: flex;
+    align-items: end;
+  }
 `;
