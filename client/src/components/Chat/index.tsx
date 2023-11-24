@@ -65,7 +65,7 @@ const Chat = ({
 
         
         
-        {allMessages && allMessages.map((messageContent: any) => {
+        {arraySemRepeticao && arraySemRepeticao.map((messageContent: any) => {
           return (
             <div
               id="message"

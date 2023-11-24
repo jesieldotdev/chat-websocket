@@ -5,14 +5,17 @@ interface loginProps{
     setUsername: any
     joinRoom: any
     roomsList: any
+    warning: string 
 }
 
-const Login = ({setRoom, setUsername, joinRoom, roomsList}: loginProps) => {
+const Login = ({setRoom, setUsername, joinRoom, roomsList, warning}: loginProps) => {
 
 
     return (
         <S.LoginContainer>
-          <h3>Join A Chat</h3>
+          <h3>Open Chat</h3>
+
+
           <input
             type="text"
             placeholder="John..."
@@ -22,16 +25,21 @@ const Login = ({setRoom, setUsername, joinRoom, roomsList}: loginProps) => {
           />
           <input
             type="text"
-            placeholder="Room ID..."
+            placeholder="Sala..."
             onChange={(event) => {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join A Room</button>
 
-          <hr></hr>
+      <div className="warning">{warning}</div>
 
-          <h4>Rooms:</h4>
+          <button onClick={joinRoom}>Entrar na sala</button>
+
+          <hr style={{
+            width: '100%'
+          }}></hr>
+
+          <h4>Salas ativas:</h4>
           {roomsList ? roomsList.map((room:string[]) => (
             <p>{room}</p>
           )) : null}

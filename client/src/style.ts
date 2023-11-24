@@ -5,7 +5,7 @@ export const AppContainer = styled.div`
   height: 100vh;
 
   /* min-height: 100vh; */
-  background: #282828;
+  background: #1e2122;
   margin: 0;
   color: #212121;
   font-family: "Open Sans", sans-serif;

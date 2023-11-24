@@ -23,12 +23,13 @@ function App() {
 
   return (
     <S.AppContainer>
-      {!showChat ? (
+      {!showChat || warnings === 'Nome de usuário já em uso' ? (
         <Login
           setRoom={setRoom}
           setUsername={setUsername}
           joinRoom={joinRoom}
           roomsList={rooms}
+          warning={warnings}
         />
       ) : (
         <Chat

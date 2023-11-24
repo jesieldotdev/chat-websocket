@@ -97,7 +97,7 @@ useEffect(()=> {
 
 }, [socket])
 
-  console.log(users);
+  console.log(warnings);
   return {
     username,
     setUsername,

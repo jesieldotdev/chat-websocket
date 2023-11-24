@@ -12,7 +12,7 @@ export const ChatWindow = styled.div`
   
 
   .chat-header {
-    background-color: #075a52;
+    background-color: #044842;
     color: #fefefe;
     /* display: flex; */
     padding: 8px;
@@ -26,7 +26,7 @@ export const ChatWindow = styled.div`
     min-height: 76vh;
     /* min-height: 67vh; */
 
-    background: #1E1E1E;
+    background: #171819;
     margin: 0;
     padding: 16px;
     padding-bottom: 200px;
@@ -133,7 +133,7 @@ export const ChatWindow = styled.div`
 
     outline: none;
     font-family: "Open Sans", sans-serif;
-    background-color: #282828;
+    background-color: #1e2122;
     color: #fefefe;
 
 
