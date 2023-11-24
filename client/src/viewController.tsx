@@ -10,8 +10,9 @@ const IndexViewController = () => {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
-  const [not, setNot] = useState<any>("");
-  const [allMessages, setAllMessages] = useState<any>('')
+  const [rooms, setRooms] = useState<string[]>();
+  const [allMessages, setAllMessages] = useState<any>("");
+  const [warnings, setWarnings] = useState<any>("");
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
@@ -38,29 +39,35 @@ const IndexViewController = () => {
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
+      
     }
   };
-
-  
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
     });
 
-    socket.on("message", (data) => {
+    socket.on("warning", (data) => {
+      if (data) {
+        setWarnings(data);
+      }
+    });
+
+    socket.on("getMessages", (data) => {
       if (data) {
         setAllMessages(data);
       }
-
-      console.log(data);
     });
 
+    socket.on("updateRooms", (rooms) => {
+      if (rooms) {
+        setRooms(rooms);
+      }
+    });
   }, [socket]);
 
-
-
-  console.log(allMessages);
+  console.log(rooms);
   return {
     username,
     setUsername,
@@ -75,7 +82,9 @@ const IndexViewController = () => {
     setMessageList,
     messageList,
     sendMessage,
-    allMessages
+    allMessages,
+    rooms,
+    warnings,
   };
 };
 

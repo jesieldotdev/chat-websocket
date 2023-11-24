@@ -15,7 +15,9 @@ function App() {
     setRoom,
     setUsername,
     joinRoom,
-    allMessages
+    allMessages,
+    rooms,
+    warnings
   } = IndexViewController();
 
   return (
@@ -25,6 +27,7 @@ function App() {
           setRoom={setRoom}
           setUsername={setUsername}
           joinRoom={joinRoom}
+          roomsList={rooms}
         />
       ) : (
         <Chat
@@ -34,6 +37,7 @@ function App() {
           setCurrentMessage={setCurrentMessage}
           sendMessage={sendMessage}
           allMessages={allMessages}
+          warnings={warnings}
         />
       )}
     </S.AppContainer>

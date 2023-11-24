@@ -8,6 +8,7 @@ interface chatProps {
   setCurrentMessage: any;
   sendMessage: any;
   allMessages: any
+  warnings: any
 }
 
 const Chat = ({
@@ -16,7 +17,8 @@ const Chat = ({
   currentMessage,
   setCurrentMessage,
   sendMessage,
-  allMessages
+  allMessages,
+  warnings
 }: chatProps) => {
   
 
@@ -33,6 +35,7 @@ const Chat = ({
   // Remover objetos duplicados com base na propriedade 'id'
   let arraySemRepeticao = removerDuplicados(messageList, "message");
 
+  console.log(warnings)
   console.log(allMessages)
   // allMessages.map((item) => {
   //   ar
@@ -51,7 +54,7 @@ const Chat = ({
 
         
         
-        {arraySemRepeticao.map((messageContent: any) => {
+        {arraySemRepeticao && arraySemRepeticao.map((messageContent: any) => {
           return (
             <div
               id="message"

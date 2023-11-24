@@ -4,9 +4,10 @@ interface loginProps{
     setRoom: any
     setUsername: any
     joinRoom: any
+    roomsList: any
 }
 
-const Login = ({setRoom, setUsername, joinRoom}: loginProps) => {
+const Login = ({setRoom, setUsername, joinRoom, roomsList}: loginProps) => {
 
 
     return (
@@ -27,6 +28,13 @@ const Login = ({setRoom, setUsername, joinRoom}: loginProps) => {
             }}
           />
           <button onClick={joinRoom}>Join A Room</button>
+
+          <hr></hr>
+
+          <h4>Rooms:</h4>
+          {roomsList ? roomsList.map((room:string[]) => (
+            <p>{room}</p>
+          )) : null}
         </S.LoginContainer>
     )
 }
