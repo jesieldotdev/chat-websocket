@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ChatWindow = styled.div`
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
   display: flex;
   flex-direction: column;
   max-height: 100vh;
@@ -179,5 +179,15 @@ export const ChatWindow = styled.div`
     margin-top: 0px;
     display: flex;
     align-items: end;
+  }
+
+  .users{
+    font-size: 11px;
+    font-weight: 300;
+  }
+
+  .warnings{
+    color: #fff;
+    text-align: center;
   }
 `;

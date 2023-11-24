@@ -17,7 +17,8 @@ function App() {
     joinRoom,
     allMessages,
     rooms,
-    warnings
+    warnings,
+    users
   } = IndexViewController();
 
   return (
@@ -38,6 +39,7 @@ function App() {
           sendMessage={sendMessage}
           allMessages={allMessages}
           warnings={warnings}
+          users={users}
         />
       )}
     </S.AppContainer>

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import * as S from "./style";
+import { userProps } from "../../viewController";
 
 interface chatProps {
   messageList: any;
@@ -9,6 +10,8 @@ interface chatProps {
   sendMessage: any;
   allMessages: any
   warnings: any
+  users: userProps
+
 }
 
 const Chat = ({
@@ -18,7 +21,8 @@ const Chat = ({
   setCurrentMessage,
   sendMessage,
   allMessages,
-  warnings
+  warnings,
+  users
 }: chatProps) => {
   
 
@@ -37,6 +41,7 @@ const Chat = ({
 
   console.log(warnings)
   console.log(allMessages)
+  console.log(users)
   // allMessages.map((item) => {
   //   ar
   // })
@@ -44,13 +49,19 @@ const Chat = ({
   return (
     <S.ChatWindow>
       <div className="chat-header">
-        <p>Sala - {messageList[0]?.room || "Live Chat"}</p>
+        <p>{users && users[0]?.room || "Live Chat"}</p>
+        <div className="users">{
+          users && users?.map((user:userProps) => (
+            
+            <span key={user.user}> {user.user} {users[users.length - 1] !== user ? ',' : null}</span>)
+          )
+}</div>
+
       </div>
       <div className="chat-body">
 
-        {/* {not ? <p style={{
-          color:'#fff'
-        }}>{JSON.stringify(not)}</p> : null} */}
+      <div className="warnings">{warnings}</div>
+
 
         
         
@@ -78,7 +89,7 @@ const Chat = ({
         <input
           type="text"
           value={currentMessage}
-          placeholder="Message..."
+          placeholder="Mensagem..."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}

@@ -6,18 +6,38 @@ const url = "http://localhost:5000";
 
 const socket = io(url);
 
-const IndexViewController = () => {
-  const [username, setUsername] = useState("");
-  const [room, setRoom] = useState("");
-  const [showChat, setShowChat] = useState(false);
-  const [rooms, setRooms] = useState<string[]>();
-  const [allMessages, setAllMessages] = useState<any>("");
-  const [warnings, setWarnings] = useState<any>("");
+export interface messageProps {
+  _id: string;
+  room: string;
+  author: string;
+  time: string;
+  message: string;
+  __v: number;
+}
 
-  const joinRoom = () => {
+export interface userProps {
+  user: string
+  room: string
+}
+
+const IndexViewController = () => {
+  const [username, setUsername] = useState<string>("");
+  const [room, setRoom] = useState<string>("");
+  const [showChat, setShowChat] = useState<boolean>(false);
+  const [rooms, setRooms] = useState<string[]>();
+  const [allMessages, setAllMessages] = useState<messageProps[] | undefined>();
+  const [warnings, setWarnings] = useState<string[]>();
+  const [users, setUsers] = useState<userProps[]>();
+
+  const joinRoom = async() => {
     if (username !== "" && room !== "") {
-      socket.emit("join_room", room);
+      socket.emit("join_room", { room: room, user: username });
       setShowChat(true);
+      await socket.on("getUsers", (users) => {
+        if (users) {
+          setUsers(users);
+        }
+      });
     }
   };
 
@@ -39,7 +59,6 @@ const IndexViewController = () => {
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
-      
     }
   };
 
@@ -65,9 +84,20 @@ const IndexViewController = () => {
         setRooms(rooms);
       }
     });
+
+ 
   }, [socket]);
 
-  console.log(rooms);
+useEffect(()=> {
+     socket.on("getUsers", (users) => {
+      if (users) {
+        setUsers(users);
+      }
+    });
+
+}, [socket])
+
+  console.log(users);
   return {
     username,
     setUsername,
@@ -85,6 +115,7 @@ const IndexViewController = () => {
     allMessages,
     rooms,
     warnings,
+    users
   };
 };
 
