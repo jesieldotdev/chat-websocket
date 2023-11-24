@@ -123,13 +123,12 @@ export const ChatWindow = styled.div`
   input {
     height: 50px;
     display: flex;
-    min-width: 82%;
+    width: 90vw;
     /* flex: 85%; */
     border: 0;
     border-radius: 16px;
     padding: 0 0.7em;
     font-size: 1em;
-    border-right: 1px dotted #607d8b;
     margin-right: 8px;
 
     outline: none;
@@ -163,6 +162,8 @@ export const ChatWindow = styled.div`
     outline: none;
     font-size: 25px;
     color: #fefefe;
+    /* margin-right: 16px; */
+    margin-right: auto;
   }
   .hide {
     opacity: 0 !important;
