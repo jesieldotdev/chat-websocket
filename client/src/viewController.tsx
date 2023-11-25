@@ -2,7 +2,7 @@ import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
 // const url = "http://localhost:5000";
-const url = "18.231.159.123:5000"
+const url = "http://ec2-18-231-159-123.sa-east-1.compute.amazonaws.com:5000/"
 
 const socket = io(url);
 
