@@ -84,7 +84,14 @@ const Chat = ({
               </div>
             </div>
           );
+
+
         })}
+
+        <div style={{
+          // backgroundColor: 'red',
+          height: 80
+        }}></div>
       </div>
       <div className="chat-footer">
         <input
