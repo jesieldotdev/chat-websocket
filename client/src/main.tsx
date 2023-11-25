@@ -6,17 +6,17 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Chat from './pages/Chat/index.tsx';
+// import Chat from './pages/Chat/index.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
-  {
-    path: '/:room',
-    element: <Chat />
-  }
+  // {
+  //   path: '/:room',
+  //   element: <Chat />
+  // }
 ]);
 
 

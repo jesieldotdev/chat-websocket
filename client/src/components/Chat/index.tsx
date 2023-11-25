@@ -65,9 +65,10 @@ const Chat = ({
 
         
         
-        {arraySemRepeticao && arraySemRepeticao.map((messageContent: any) => {
+        {allMessages && allMessages.map((messageContent: any) => {
           return (
             <div
+              key={messageContent.id}
               id="message"
               className={username !== messageContent.author ? "other" : "you"}
             >
