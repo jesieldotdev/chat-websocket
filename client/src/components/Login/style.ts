@@ -6,6 +6,8 @@ export const LoginContainer = styled.div`
   justify-content: center;
   text-align: center;
   color: #fefefe;
+  position: absolute;
+  top: 50px;
   /* background-color: red; */
 
   h3 {
