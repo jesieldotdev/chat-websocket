@@ -3,6 +3,8 @@ import Chat from "./components/Chat";
 import Login from "./components/Login";
 import IndexViewController from "./viewController";
 import * as S from './style'
+import Plane from './assets/paper-plane.json'
+import Lottie from 'lottie-react'
 
 function App() {
   const {
@@ -23,6 +25,9 @@ function App() {
 
   return (
     <S.AppContainer>
+
+          {/* <Lottie animationData={Plane} className="lottie" /> */}
+
       {!showChat || warnings === 'Nome de usuário já em uso' ? (
         <Login
           setRoom={setRoom}

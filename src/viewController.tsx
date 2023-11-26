@@ -1,8 +1,8 @@
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const url = "http://localhost:5000";
-// const url = "https://powerful-oxidized-navy.glitch.me/"
+// const url = "http://localhost:5000";
+const url = "http://ec2-18-231-159-123.sa-east-1.compute.amazonaws.com:5000/"
 
 const socket = io(url);
 
@@ -58,14 +58,15 @@ const IndexViewController = () => {
 
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
+      setAllMessages((list) => [...list, messageData]);
       setCurrentMessage("");
     }
   };
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageList((list) => [...list, data]);
-    });
+    // socket.on("receive_message", (data) => {
+    //   setMessageList((list) => [...list, data]);
+    // });
 
     socket.on("warning", (data) => {
       if (data) {

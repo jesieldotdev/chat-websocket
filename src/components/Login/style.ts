@@ -6,17 +6,20 @@ export const LoginContainer = styled.div`
   justify-content: center;
   text-align: center;
   color: #fefefe;
+  position: absolute;
+  top: 50px;
   /* background-color: red; */
 
   h3 {
-    font-size: 42px;
+    font-size: 20pt;
     margin-bottom: 1rem;
     transform: rotate(-24deg);
     position: relative;
-    left: -90px;
+    left: -80px;
     top: 0;
     z-index: -999px;
     top: 40px
+    
   }
 
   input {
@@ -57,5 +60,13 @@ export const LoginContainer = styled.div`
     font-weight: 300px;
     text-align: left;
     margin-left: 8px;
+  }
+
+  .room-list{
+    /* background-color: red; */
+    .room{
+      line-height: 2px;
+
+    }
   }
 `;

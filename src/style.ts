@@ -13,4 +13,10 @@ export const AppContainer = styled.div`
   place-items: center;
   margin-bottom: 0px;
 
+  .lottie{
+    width: 200px;
+    /* position: relative;
+    top: -200px; */
+  }
+
 `;

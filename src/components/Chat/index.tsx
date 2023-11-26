@@ -65,9 +65,10 @@ const Chat = ({
 
         
         
-        {arraySemRepeticao && arraySemRepeticao.map((messageContent: any) => {
+        {allMessages && allMessages.map((messageContent: any) => {
           return (
             <div
+              key={messageContent.id}
               id="message"
               className={username !== messageContent.author ? "other" : "you"}
             >
@@ -83,7 +84,14 @@ const Chat = ({
               </div>
             </div>
           );
+
+
         })}
+
+        <div style={{
+          // backgroundColor: 'red',
+          height: 80
+        }}></div>
       </div>
       <div className="chat-footer">
         <input

@@ -1,4 +1,6 @@
+import { useId } from 'react'
 import * as S from './style'
+
 
 interface loginProps{
     setRoom: any
@@ -13,6 +15,8 @@ const Login = ({setRoom, setUsername, joinRoom, roomsList, warning}: loginProps)
 
     return (
         <S.LoginContainer>
+
+          
           <h3>Open Chat</h3>
 
 
@@ -40,9 +44,11 @@ const Login = ({setRoom, setUsername, joinRoom, roomsList, warning}: loginProps)
           }}></hr>
 
           <h4>Salas ativas:</h4>
+          <div className='room-list'>
           {roomsList ? roomsList.map((room:string[]) => (
-            <p>{room}</p>
+            <p className='room' key={useId()}>{room}</p>
           )) : null}
+          </div>
         </S.LoginContainer>
     )
 }
